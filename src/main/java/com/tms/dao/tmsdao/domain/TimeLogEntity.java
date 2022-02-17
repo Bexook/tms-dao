@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 
 @NamedNativeQueries(value = {
@@ -28,13 +29,19 @@ public class TimeLogEntity extends BaseEntity implements ChangeRequestEntityMark
     @Column(name = "date")
     private LocalDate date;
 
-    @Column(name = "time_spend")
+    @Column(name = "working_time")
     private Double timeSpend;
 
     @Column(name = "calendar_day_type")
-    @Enumerated(value = EnumType.ORDINAL)
     private CalendarDayType calendarDayType;
 
-    @Column(name = "created_by")
-    private String createdBy;
+    @ManyToOne
+    @JoinColumn(name = "created_by", referencedColumnName = "id")
+    private UserEntity createdBy;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+
+    @Column(name = "modified_at")
+    private LocalDateTime modifiedAt;
 }

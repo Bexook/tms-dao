@@ -17,7 +17,9 @@ public class JWTTokenEntity {
     private Long id;
     @Column(name = "jwt_token")
     private String jwtToken;
-
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @ManyToOne
+    private UserEntity user;
 
     public JWTTokenEntity(String jwtToken) {
         this.jwtToken = jwtToken;

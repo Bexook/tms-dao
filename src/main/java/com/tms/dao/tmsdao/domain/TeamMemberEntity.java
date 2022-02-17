@@ -16,6 +16,7 @@ import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
 import javax.persistence.Table;
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @SqlResultSetMappings(value = {
         @SqlResultSetMapping(name = "toTeamMemberDTO",
@@ -59,7 +60,6 @@ public class TeamMemberEntity extends BaseEntity implements ChangeRequestEntityM
     private String name;
 
     @Column(name = "team_member_role")
-    @Enumerated(value = EnumType.ORDINAL)
     private TeamMemberRole memberRole;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
