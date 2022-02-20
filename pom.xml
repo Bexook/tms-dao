@@ -56,6 +56,11 @@
             <name>a0jni3hvdosse-artifactory-primary-0-snapshots</name>
             <url>https://tmsservice.jfrog.io/artifactory/tms-dao-mvn-libs-snapshot</url>
         </snapshotRepository>
+        <repository>
+            <id>central</id>
+            <name>a0jni3hvdosse-artifactory-primary-0-releases</name>
+            <url>https://tmsservice.jfrog.io/artifactory/tms-libs-release</url>
+        </repository>
     </distributionManagement>
 
     <build>
