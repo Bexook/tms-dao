@@ -32,16 +32,12 @@ public class UserMessagesEntity {
 
     @OneToOne(targetEntity = UserEntity.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "sender_id",
-            columnDefinition = "BIGINT NOT NULL UNIQUE",
-            referencedColumnName = "id",
-            foreignKey = @ForeignKey(name = "receiver_message_fk"))
+            referencedColumnName = "id")
     private UserEntity senderId;
 
     @OneToOne(targetEntity = UserEntity.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "receiver_id",
-            columnDefinition = "BIGINT NOT NULL UNIQUE",
-            referencedColumnName = "id",
-            foreignKey = @ForeignKey(name = "receiver_message_fk"))
+            referencedColumnName = "id")
     private UserEntity receiverId;
 
     @Column(name = "sending_time")
@@ -53,8 +49,8 @@ public class UserMessagesEntity {
     @Column(name = "read_time")
     private LocalDateTime readTime;
 
-    @Column(name = "delete")
-    private Boolean delete;
+    @Column(name = "deleted")
+    private Boolean deleted;
 
     @PrePersist
     private void prePersist() {
