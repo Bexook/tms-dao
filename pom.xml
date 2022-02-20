@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.tms.dao</groupId>
     <artifactId>tms-dao</artifactId>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.1.2-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>tms-dao</name>
     <description>Demo project for Spring Boot</description>
@@ -49,6 +49,14 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>a0jni3hvdosse-artifactory-primary-0-snapshots</name>
+            <url>https://tmsservice.jfrog.io/artifactory/tms-dao-mvn-libs-snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <build>
         <plugins>
