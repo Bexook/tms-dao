@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.tms.dao</groupId>
     <artifactId>tms-dao</artifactId>
-    <version>0.1.2-SNAPSHOT</version>
+    <version>0.1.3-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>tms-dao</name>
     <properties>
@@ -45,6 +45,13 @@
             <artifactId>lombok</artifactId>
             <version>1.18.20</version>
         </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+
+
     </dependencies>
 
     <distributionManagement>
